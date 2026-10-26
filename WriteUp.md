@@ -1,6 +1,6 @@
 # I spent an afternoon chasing "Stuxbot" through our logs. Here's how it went.
 
-We got a TI report a while back on a group called Stuxbot. Nothing fancy about their approach — opportunistic, not picky about targets, motivated by espionage. But they had a repeatable playbook: phishing email, OneNote attachment, batch file, PowerShell running in memory, then a RAT that sticks around for persistence. The report gave us enough to go hunting for it in our own environment, so I opened Kibana and started poking around the Sysmon and Zeek indices.
+CASE - Stuxbot. Nothing fancy  — opportunistic, not picky about targets, motivated by espionage. A repeatable playbook: phishing email, OneNote attachment, batch file, PowerShell running in memory, then a RAT that sticks around for persistence. The report gave us enough to go hunting for it in our own environment, so I opened Kibana and started poking around the Sysmon and Zeek indices.
 
 My starting theory was pretty basic: somebody in the org got a phishing email with a malicious OneNote file, opened it, and set off the chain described in the report. That's worth saying out loud because it actually matters — if I'd started from "did this specific hash execute anywhere," I'd have written a completely different first query. Where you start shapes everything downstream.
 
